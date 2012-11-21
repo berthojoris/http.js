@@ -3,9 +3,9 @@ http.js
 
 Simple and small JavaScript ajax library
 
-All this library does is provide a simple wrapper around the XmlHTTPRequest object.
+All this library does is provide a simple wrapper around the XMLHttpRequest object.
 
-This methods should be fairly self-explanatory. Headers is an object with header key/value pairs. If provided, data attributes will be sent as a 'application/x-www-form-urlencoded' body on the request. Lastly, if the response content type is 'application/json', the response will be parse and the resulting object returned, otherwise the response text is returned.
+These methods should be fairly self-explanatory. 'headers' is an object with header key/value pairs. If provided, 'data' attributes will be sent as a 'application/x-www-form-urlencoded' body on the request. Lastly, if the response content type is 'application/json', the response will be parsed and the resulting object passed to the 'success' or 'error' callbacks. Otherwise the response text is passed to the 'success' or 'error' callbacks.
 
 Method signatures:
 
