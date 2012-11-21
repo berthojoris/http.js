@@ -1,9 +1,29 @@
-var http = (function() {
-  var ajax = function(method, url, headers, data, success, error) {
+/**
+ * Copyright (C) 2012 James Blashill
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy of this
+ * software and associated documentation files (the "Software"), to deal in the Software
+ * without restriction, including without limitation the rights to use, copy, modify,
+ * merge, publish, distribute, sublicense, and/or sell copies of the Software, and to
+ * permit persons to whom the Software is furnished to do so, subject to the following
+ * conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all copies
+ * or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+ * INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
+ * PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+ * HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF
+ * CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE
+ * OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
+var http = (function () {
+  var ajax = function (method, url, headers, data, success, error) {
     var xmlhttp = new XMLHttpRequest();
     var postBody;
 
-    xmlhttp.onreadystatechange = function() {
+    xmlhttp.onreadystatechange = function () {
       var response = false;
       if (xmlhttp.readyState == 4) {
         if (xmlhttp.responseText) {
@@ -36,21 +56,21 @@ var http = (function() {
     xmlhttp.send(postBody);
   };
   return {
-    ajax: ajax,
+    ajax:ajax,
 
-    get : function(url, success, error) {
+    get:function (url, success, error) {
       ajax("GET", url, false, false, success, error);
     },
 
-    post : function(url, data, success, error) {
+    post:function (url, data, success, error) {
       ajax("POST", url, false, data, success, error);
     },
 
-    put : function(url, data, success, error) {
+    put:function (url, data, success, error) {
       ajax("PUT", url, false, data, success, error);
     },
 
-    delete : function(url, success, error) {
+    delete:function (url, success, error) {
       ajax("DELETE", url, false, false, success, error);
     }
   };
