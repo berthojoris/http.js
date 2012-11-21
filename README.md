@@ -21,6 +21,7 @@ http.delete : function(url, success, error)
 
 Usage example:
 
+`
 http.post("users/james", {
   name:"James Joyce",
   password:"Ulysses"
@@ -29,3 +30,4 @@ http.post("users/james", {
 }, function (response) {
   alert("Ooops!\n" + JSON.stringify(response));
 });
+`
